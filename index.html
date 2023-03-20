@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row text-center justify-content-around">
+            <div class="col-lg-6 col-12 mb-3">
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <h1 class="fs-2 m-0">Your Balance</h1>
+                        <span id="balance" class="fs-1 fw-bolder">00</span>
+                    </div>
+                    <div class="card-body rounded-pill">
+                        <div class="row justify-content-center p-5">
+                            <div class="col-6 bg-light rounded-start py-4">
+                                <h2 class="fs-3">Income</h2>
+                                <span id="income" class="fs-2 fw-bolder">00</span>
+                            </div>
+                            <div class="col-6 bg-dark rounded-end text-white py-4">
+                                <h2 class="fs-3">Expenses</h2>
+                                <span id="expense" class="fs-2 fw-bolder">00</span>
+                            </div>
+                            <input id="description"  type="text" placeholder="Description" class="form-control text-start m-2 p-3 w-100 mt-5">
+                            <input type="number" id="amountInput" placeholder = "Amount" class="form-control p-3 text-start mb-3">
+                            <button class="btn btn-success mt-2 p-4 mb-1" type="button" onclick="amount(true)">Income</button>
+                            <button class="btn btn-danger p-4 " onclick="amount(false)" type="button">Expenses</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div2"  class="col-lg-4 col-12 d-none">
+                <div class="card shadow" >
+                    <h4 class="m-3 text-start">Transactions</h4>
+                    <div id="dataDiv" class="card-body p-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
