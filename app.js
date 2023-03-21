@@ -13,7 +13,7 @@ let amount = (amountValue) => {
     dataH3.classList.add('border-4' ,'border-end', 'p-3', 'm-0')
     borderDiv.appendChild(dataH3)
     console.log(dataH3)
-    if (amountValue) {
+    if (amountValue == true && amountInput.value=="") {
         moneyIncome.play();
         balance.innerText = parseFloat(balance.innerText) + parseFloat(amountInput.value)
         income.innerText = parseFloat(income.innerText) + parseFloat(amountInput.value)
