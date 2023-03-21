@@ -5,7 +5,7 @@ let amount = (amountValue) => {
     moneyIncome.currentTime = 0;
     moneyDeduction.pause()
     moneyDeduction.currentTime = 0;
-    let borderDiv = document.createElement('div')
+    if(amountInput.value !=""){let borderDiv = document.createElement('div')
     div2.classList.remove('d-none')
     dataDiv.appendChild(borderDiv)
     borderDiv.classList.add("border", "mb-3")
@@ -13,20 +13,20 @@ let amount = (amountValue) => {
     dataH3.classList.add('border-4' ,'border-end', 'p-3', 'm-0')
     borderDiv.appendChild(dataH3)
     console.log(dataH3)
-    if (amountValue == true && amountInput.value !="") {
+    if (amountValue) {
         moneyIncome.play();
         balance.innerText = parseFloat(balance.innerText) + parseFloat(amountInput.value)
         income.innerText = parseFloat(income.innerText) + parseFloat(amountInput.value)
         dataH3.classList.add('border-success')
         dataH3.innerHTML = `${description.value} <span class='text-success'>+${amountInput.value}</span>`
       }
-      else if(amountInput.value !=""){
+      else{
         moneyDeduction.play()
         balance.innerText = parseFloat(balance.innerText) - parseFloat(amountInput.value)
         expense.innerText = parseFloat(expense.innerText) + parseFloat(amountInput.value)
         dataH3.classList.add('border-danger')
         dataH3.innerHTML = `${description.value} <span class='text-danger'>-${amountInput.value}</span>`
-      }
+      }}
       amountInput.value = ""
       description.value = ""
     }
