@@ -13,8 +13,6 @@ let amount = (amountValue) => {
     dataH3.classList.add('border-4' ,'border-end', 'p-3', 'm-0')
     borderDiv.appendChild(dataH3)
     console.log(dataH3)
-    if(amountInput.value=="")
-    amountInput.value=0;
     if (amountValue) {
         moneyIncome.play();
         balance.innerText = parseFloat(balance.innerText) + parseFloat(amountInput.value)
@@ -22,7 +20,7 @@ let amount = (amountValue) => {
         dataH3.classList.add('border-success')
         dataH3.innerHTML = `${description.value} <span class='text-success'>+${amountInput.value}</span>`
       }
-      else {
+      else if(amountInput.value !=""){
         moneyDeduction.play()
         balance.innerText = parseFloat(balance.innerText) - parseFloat(amountInput.value)
         expense.innerText = parseFloat(expense.innerText) + parseFloat(amountInput.value)
