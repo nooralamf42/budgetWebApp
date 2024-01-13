@@ -13,7 +13,6 @@ const clearData = () =>{
 }
 
 const upDateBalance = (balance,name, newMoney, isExpense)=>{
-  console.log(income.innerText)
   let data = {
     amount ,
     income : income.innerText,
@@ -63,7 +62,6 @@ const createHistory = ({value, expenseName, isExpense}) =>{
   }     
 
 const onLoad = () =>{
-  console.log(lsData.expense)
   balance.innerText = lsData.amount
   income.innerText = parseFloat(lsData.income)
   expense.innerText = lsData.expense
@@ -71,24 +69,12 @@ const onLoad = () =>{
 }
 
 lsData && onLoad()
-if(+balance.innerText>=0){
-  balance.classList.add('text-success')
-}
-else{
-  balance.classList.add('text-danger')
-}
 
 let amount = (amountValue) => {
   moneyIncome.pause();
   moneyIncome.currentTime = 0;
   moneyDeduction.pause();
   moneyDeduction.currentTime = 0;
-  if(+balance.innerText>=0){
-    balance.classList.add('text-success')
-  }
-  else{
-    balance.classList.add('text-danger')
-  }
 
   if (amountInput.value != "") {
     let borderDiv = document.createElement("div");
@@ -98,7 +84,6 @@ let amount = (amountValue) => {
     let dataH3 = document.createElement("h3");
     dataH3.classList.add("border-4", "border-end", "p-3", "m-0");
     borderDiv.appendChild(dataH3);
-    console.log(dataH3);
 
     if (amountValue) {
       moneyIncome.play();
